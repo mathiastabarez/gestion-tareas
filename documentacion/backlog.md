@@ -15,7 +15,7 @@
 
 ## Pendiente
 
-- [ ] TEC-002 - Crear y publicar el esquema inicial de la base de datos.
+
 - [ ] TEC-003 - Configurar la base de ejecución de la Web y la API.
 - [ ] HU-001 - Consultar las tareas.
 - [ ] HU-002 - Crear una tarea.
@@ -26,3 +26,4 @@
 ## Completado
 
 - [x] TEC-001 - Crear la solución y la estructura de proyectos.
+- [x] TEC-002 - Crear y publicar el esquema inicial de la base de datos.

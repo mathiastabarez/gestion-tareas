@@ -57,8 +57,12 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tablas" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tablas\Tareas.sql" />
+    <None Include="Scripts\eliminarDatos.sql" />
+    <None Include="Scripts\insertarTarea.sql" />
+    <None Include="Scripts\insertarTareaMal.sql" />
   </ItemGroup>
 </Project>
