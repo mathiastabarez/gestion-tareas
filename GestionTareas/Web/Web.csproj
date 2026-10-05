@@ -7,8 +7,4 @@
     <UserSecretsId>a5026b7e-6435-4c6b-9870-e8ed5715d649</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>

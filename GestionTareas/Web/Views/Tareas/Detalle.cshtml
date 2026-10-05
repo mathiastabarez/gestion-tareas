@@ -1,0 +1,111 @@
+﻿@model Web.Tareas.Models.TareaViewModel
+
+@{
+    ViewData["Title"] = Model.Titulo;
+
+    var claseEstado = Model.Estado switch
+    {
+        "Pendiente" => "bg-secondary",
+        "EnCurso" => "bg-warning text-dark",
+        "Completada" => "bg-success",
+        _ => "bg-secondary"
+    };
+
+    var nombreEstado = Model.Estado == "EnCurso"
+        ? "En curso"
+        : Model.Estado;
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="mb-3">
+            <a asp-controller="Tareas"
+               asp-action="Index"
+               class="btn btn-outline-secondary">
+                ← Volver a la lista
+            </a>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-white py-3">
+                <div class="d-flex flex-wrap
+                    justify-content-between
+                    align-items-center
+                    gap-3">
+
+                    <div>
+                        <p class="text-muted mb-1">
+                            Tarea #@Model.Id
+                        </p>
+
+                        <h1 class="h3 mb-0">
+                            @Model.Titulo
+                        </h1>
+                    </div>
+
+                    <span class="badge @claseEstado fs-6">
+                        @nombreEstado
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-body p-4">
+                <section class="mb-4">
+                    <h2 class="h5">Descripción</h2>
+
+                    @if (string.IsNullOrWhiteSpace(Model.Descripcion))
+                    {
+                        <div class="alert alert-light border mb-0">
+                            Esta tarea no tiene una descripción.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="bg-light border rounded p-3">
+                            <p class="mb-0"
+                               style="white-space: pre-wrap;">@Model.Descripcion</p>
+                        </div>
+                    }
+                </section>
+
+                <hr />
+
+                <section>
+                    <h2 class="h5 mb-3">Información</h2>
+
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4">
+                            Estado
+                        </dt>
+
+                        <dd class="col-sm-8">
+                            <span class="badge @claseEstado">
+                                @nombreEstado
+                            </span>
+                        </dd>
+
+                        <dt class="col-sm-4">
+                            Fecha de creación
+                        </dt>
+
+                        <dd class="col-sm-8">
+                            @(Model.FechaCreacion
+                                .ToLocalTime()
+                                .ToString("dd/MM/yyyy HH:mm"))
+                        </dd>
+
+                        <dt class="col-sm-4">
+                            Fecha de vencimiento
+                        </dt>
+
+                        <dd class="col-sm-8">
+                            @(Model.FechaVencimiento?
+                                .ToString("dd/MM/yyyy")
+                                ?? "Sin vencimiento")
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

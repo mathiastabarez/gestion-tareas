@@ -1,3 +1,5 @@
+using Api.Errores;
+using Microsoft.AspNetCore.Diagnostics;
 using System.Text.Json.Serialization;
 using Application;
 using Infrastructure;
@@ -13,6 +15,15 @@ builder.Services
     });
 
 builder.Services.AddProblemDetails();
+
+builder.Services.AddExceptionHandler<
+    TareaNoEncontradaExceptionHandler>();
+
+builder.Services.Configure<ExceptionHandlerOptions>(options =>
+{
+    options.AllowStatusCode404Response = true;
+});
+
 builder.Services.AddOpenApi();
 
 builder.Services.AddApplication();

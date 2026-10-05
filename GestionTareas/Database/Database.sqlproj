@@ -65,4 +65,7 @@
     <None Include="Scripts\insertarTarea.sql" />
     <None Include="Scripts\insertarTareaMal.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\poblarbd.sql" />
+  </ItemGroup>
 </Project>

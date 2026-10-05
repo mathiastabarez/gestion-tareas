@@ -1,3 +1,4 @@
+using Web.Tareas;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
@@ -14,7 +15,7 @@ builder.Services.AddHttpClient("GestionTareasApi", client =>
 
     client.BaseAddress = new Uri(baseUrl);
 });
-
+builder.Services.AddScoped<TareasApiClient>();
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
