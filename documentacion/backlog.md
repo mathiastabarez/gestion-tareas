@@ -11,13 +11,10 @@
 
 ## En curso
 
-
+- [ ] HU-001 - Consultar las tareas.
 
 ## Pendiente
 
-
-- [ ] TEC-003 - Configurar la base de ejecución de la Web y la API.
-- [ ] HU-001 - Consultar las tareas.
 - [ ] HU-002 - Crear una tarea.
 - [ ] HU-003 - Editar una tarea y cambiar su estado.
 - [ ] HU-004 - Eliminar una tarea con confirmación.
@@ -27,3 +24,4 @@
 
 - [x] TEC-001 - Crear la solución y la estructura de proyectos.
 - [x] TEC-002 - Crear y publicar el esquema inicial de la base de datos.
+- [x] TEC-003 - Configurar la base de ejecución de la Web y la API.
