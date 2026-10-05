@@ -1,7 +1,7 @@
 <Solution>
   <Project Path="Api/Api.csproj" />
   <Project Path="Application/Application.csproj" />
-  <Project Path="Database/Database.sqlproj">
+  <Project Path="Database/Database.sqlproj" Id="e793e254-e42e-450e-ad6d-ba9edc87fcb8">
     <Build />
     <Deploy />
   </Project>
